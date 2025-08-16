@@ -15,9 +15,66 @@ body {
 }
 
 .navbar {
-    display: flex;
+      display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 48px; /* Smaller height */
+    padding: 0 20px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.nav-toggle .bar {
+    height: 4px;
+    width: 100%;
+    background: #222;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 700px) {
+    .nav-toggle {
+        display: flex;
+    }
+    nav {
+        width: 100%;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        z-index: 100;
+        padding: 12px 0;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    .navbar {
+        position: relative;
+    }
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 48px; /* Vertically center */
 }
 
 .section {
@@ -30,14 +87,21 @@ body {
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
+   background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    /* Reduce padding for smaller height */
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
-    list-style: none;
+    display: flex;
+    gap: 18px;
+    margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 nav ul li {
@@ -46,8 +110,39 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    padding: 8px 10px;
+    transition: color 0.2s;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #0077b5;
+}
+
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: unset;
+        padding: 8px 10px;
+    }
+    .navbar h1 {
+        line-height: 1.2;
+        margin-bottom: 6px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    nav ul li a {
+        padding: 6px 0;
+        font-size: 0.98rem;
+    }
 }
 
 .btn {
@@ -60,21 +155,73 @@ nav ul li a {
 }
 
 .experience-container, .project-container {
-    display: flex;
+     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 28px;
+    margin-top: 10px;
 }
 
 .experience-item, .project-item {
-    background: #f9f9f9;
-    padding: 20px;
-    margin: 15px 0;
+       background: #fff;
+    padding: 28px 24px;
+    margin: 0;
     border-radius: 10px;
     text-align: left;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 95%;
     max-width: 800px;
+    color: #333;
+    transition: transform 0.25s, box-shadow 0.25s;
+   
+    position: relative;
 }
+
+.experience-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    background: #f5faff;
+}
+
+.experience-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.experience-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.experience-item .exp-date {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    background: #394d62;
+    color: #fff;
+    font-size: 0.95rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(71, 125, 178, 0.1);
+}
+
+.experience-item ul {
+     margin: 12px 0 0 18px;
+    padding: 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.experience-item ul li {
+  margin-bottom: 7px;
+    line-height: 1.6;
+    color: #1976d2;
+}
+
 
 #contact form {
     display: flex;
@@ -193,4 +340,75 @@ nav ul li a {
     margin: 0;
     font-size: 16px;
     color: #666;
+}
+
+
+/* ...existing code... */
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 700px) {
+    .container {
+        width: 98%;
+        padding: 8px;
+    }
+    .section {
+        padding: 18px 6px;
+        margin: 12px 0;
+        max-width: 100%;
+    }
+    .experience-item, .project-item, .certification-item {
+          padding: 16px 8px;
+        font-size: 0.98rem;
+        width: 100%;
+    }
+
+     .experience-item .exp-date {
+        position: static;
+        display: block;
+        margin: 8px 0 0 0;
+        width: fit-content;
+    }
+
+    .skills-container {
+        gap: 8px;
+        padding: 10px 0;
+    }
+    .skill {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .contact-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+    footer .container {
+        padding: 10px 0;
+        font-size: 0.95rem;
+    }
+    #hero .hero-content h2 {
+        font-size: 1.4rem;
+    }
+    #hero .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .navbar h1 {
+        font-size: 1.1rem;
+    }
+    .btn {
+        font-size: 0.95rem;
+    }
+    .skill {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
 }
