@@ -1,0 +1,414 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.navbar {
+      display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px; /* Smaller height */
+    padding: 0 20px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.nav-toggle .bar {
+    height: 4px;
+    width: 100%;
+    background: #222;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 700px) {
+    .nav-toggle {
+        display: flex;
+    }
+    nav {
+        width: 100%;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        z-index: 100;
+        padding: 12px 0;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    .navbar {
+        position: relative;
+    }
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 48px; /* Vertically center */
+}
+
+.section {
+    background: #fff;
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+}
+
+header {
+   background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    /* Reduce padding for smaller height */
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    padding: 8px 10px;
+    transition: color 0.2s;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #0077b5;
+}
+
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: unset;
+        padding: 8px 10px;
+    }
+    .navbar h1 {
+        line-height: 1.2;
+        margin-bottom: 6px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    nav ul li a {
+        padding: 6px 0;
+        font-size: 0.98rem;
+    }
+}
+
+.btn {
+    display: inline-block;
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.experience-container, .project-container {
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 10px;
+}
+
+.experience-item, .project-item {
+       background: #fff;
+    padding: 28px 24px;
+    margin: 0;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 800px;
+    color: #333;
+    transition: transform 0.25s, box-shadow 0.25s;
+   
+    position: relative;
+}
+
+.experience-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    background: #f5faff;
+}
+
+.experience-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.experience-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.experience-item .exp-date {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    background: #394d62;
+    color: #fff;
+    font-size: 0.95rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(71, 125, 178, 0.1);
+}
+
+.experience-item ul {
+     margin: 12px 0 0 18px;
+    padding: 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.experience-item ul li {
+  margin-bottom: 7px;
+    line-height: 1.6;
+    color: #1976d2;
+}
+
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.logo {
+    height: 50px; /* Adjust logo size */
+    width: auto;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 0;
+}
+
+.skill {
+    background: #f5f5f5;
+    color: #333;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.skill:hover {
+    background: #ff4b2b; /* Ivanti Red */
+    color: #fff;
+    border-color: #ff4b2b;
+    transform: scale(1.05);
+}
+/* Contact Section */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.linkedin-btn {
+    background: #0077b5; /* LinkedIn Blue */
+}
+
+.linkedin-btn:hover {
+    background: #005f8a;
+}
+
+.email-btn {
+    background: #ff4b2b; /* Ivanti Red */
+}
+
+.email-btn:hover {
+    background: #e63a1f;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+/* Certifications Section */
+.certifications-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.certification-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.certification-item h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.certification-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+
+/* ...existing code... */
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 700px) {
+    .container {
+        width: 98%;
+        padding: 8px;
+    }
+    .section {
+        padding: 18px 6px;
+        margin: 12px 0;
+        max-width: 100%;
+    }
+    .experience-item, .project-item, .certification-item {
+          padding: 16px 8px;
+        font-size: 0.98rem;
+        width: 100%;
+    }
+
+     .experience-item .exp-date {
+        position: static;
+        display: block;
+        margin: 8px 0 0 0;
+        width: fit-content;
+    }
+
+    .skills-container {
+        gap: 8px;
+        padding: 10px 0;
+    }
+    .skill {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .contact-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+    footer .container {
+        padding: 10px 0;
+        font-size: 0.95rem;
+    }
+    #hero .hero-content h2 {
+        font-size: 1.4rem;
+    }
+    #hero .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .navbar h1 {
+        font-size: 1.1rem;
+    }
+    .btn {
+        font-size: 0.95rem;
+    }
+    .skill {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+}
