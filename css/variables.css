@@ -1,0 +1,20 @@
+:root {
+  /* Background */
+  --bg-start: #0f172a;
+  --bg-end: #020617;
+
+  /* Glass cards */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur: blur(16px);
+
+  /* Text */
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+
+  /* Accent */
+  --accent: #3b82f6;
+
+  /* Radius & spacing */
+  --radius: 16px;
+}
